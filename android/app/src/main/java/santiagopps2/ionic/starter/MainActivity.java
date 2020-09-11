@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package santiagopps2.ionic.starter;
 
 import android.os.Bundle;
 

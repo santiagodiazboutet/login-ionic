@@ -4,6 +4,7 @@ import { LoginCredential } from '../types/login';
 import { LoginService } from '../servicios/login.service';
 import { Router } from '@angular/router';
 import { Plugins } from "@capacitor/core";
+import { ToastController } from '@ionic/angular';
 const {Modals}=Plugins;
 @Component({
   selector: 'app-login',
@@ -16,11 +17,11 @@ export class LoginPage implements OnInit {
   constructor(
     private _router:Router,
     fomrBuilder:FormBuilder,
-    private _loginService:LoginService
-    
+    private _loginService:LoginService,
+    public toastController: ToastController    
   ) { 
     this.loginFormGroup=fomrBuilder.group({
-      email: ["",[Validators.required]],
+      email: ["",[Validators.email]],
       password:["",[Validators.required]]
     });
   }
@@ -31,15 +32,34 @@ export class LoginPage implements OnInit {
     const loginCredentials:LoginCredential=this.loginFormGroup.value;
     this._loginService.login(loginCredentials)
     .then((authData)=>{
-      this._router.navigate(["/home"]);
+      this.presentToastWithOptions(true);
     })
     
     .catch((authError)=>{
-      let alert=  Modals.alert({
-        title:'error',
-        message:'usuario o contraseña no encontrados'
-      });
+      this.presentToastWithOptions(false);
       console.log("Auth error => ",authError);
     });
   }
+
+
+  async presentToastWithOptions(logueo:boolean) {
+    const toast = await this.toastController.create({
+      position: 'bottom',
+      cssClass: "toast-success"
+      
+    });
+    if(logueo){
+    toast.color="success";
+    toast.message="logueo";}
+    else{
+      toast.color="danger";
+      toast.message="Usuario o contraseña invalidos"
+    }
+    toast.present();
+  }
+  
+}
+export class Usuario{
+  public nombre;
+  public clave;
 }

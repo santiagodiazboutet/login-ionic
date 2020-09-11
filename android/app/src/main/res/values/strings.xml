@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">clase1Login</string>
-    <string name="title_activity_main">clase1Login</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">Clase2Splash e Icono2</string>
+    <string name="title_activity_main">Clase2Splash e Icono2</string>
+    <string name="package_name">santiagopps2.ionic.starter</string>
+    <string name="custom_url_scheme">santiagopps2.ionic.starter</string>
 </resources>

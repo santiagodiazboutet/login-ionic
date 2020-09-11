@@ -34,7 +34,8 @@ var firebaseConfig = {
             AngularFireModule.initializeApp(firebaseConfig),
             AngularFirestoreModule, // firestore
             AngularFireAuthModule, // auth
-            AngularFireStorageModule],
+            AngularFireStorageModule //storage
+          ],
   providers: [
     StatusBar,
     SplashScreen,

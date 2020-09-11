@@ -1,12 +1,12 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "clase1Login",
+  "appId": "santiagopps2.ionic.starter",
+  "appName": "Clase2Splash e Icono2",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchShowDuration": 3000
     }
   },
   "cordova": {}
